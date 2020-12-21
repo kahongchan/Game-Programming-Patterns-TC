@@ -11,3 +11,6 @@ xml/
 html/*.html
 
 !html/index.html
+
+.vscode/
+.vscode/*
