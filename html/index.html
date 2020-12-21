@@ -5,7 +5,7 @@
 <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
 
-<title>游戏编程模式</title>
+<title>遊戲編程模式</title>
 <!-- Tell mobile browsers we're optimized for them and they don't need to crop the viewport. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <link rel="stylesheet" type="text/css" href="style.css" />
@@ -15,77 +15,77 @@
 <div class="content">
 <aside class="index" name="index">
 
-<h2>目录</h2>
+<h2>目錄</h2>
 <ul>
-  <li><a href="acknowledgements.html">致谢</a>
+  <li><a href="acknowledgements.html">致謝</a>
   <li><a href="introduction.html">序</a>
     <ul>
-      <li><a href="architecture-performance-and-games.html">架构，性能和游戏</a></li>
+      <li><a href="architecture-performance-and-games.html">架構，性能和遊戲</a></li>
     </ul>
   </li>
-  <li><a href="design-patterns-revisited.html">重访设计模式</a>
+  <li><a href="design-patterns-revisited.html">重訪設計模式</a>
     <ul>
       <li><a href="command.html">命令模式</a></li>
       <li><a href="flyweight.html">享元模式</a></li>
-      <li><a href="observer.html">观察者模式</a></li>
+      <li><a href="observer.html">觀察者模式</a></li>
       <li><a href="prototype.html">原型模式</a></li>
-      <li><a href="singleton.html">单例模式</a></li>
-      <li><a href="state.html">状态模式</a></li>
+      <li><a href="singleton.html">單例模式</a></li>
+      <li><a href="state.html">狀態模式</a></li>
     </ul>
   </li>
   <li><a href="sequencing-patterns.html">序列模式</a>
     <ul>
-      <li><a href="double-buffer.html">双缓冲模式</a></li>
-      <li><a href="game-loop.html">游戏循环</a></li>
+      <li><a href="double-buffer.html">雙緩衝模式</a></li>
+      <li><a href="game-loop.html">遊戲循環</a></li>
       <li><a href="update-method.html">更新方法</a></li>
     </ul>
   </li>
-  <li><a href="behavioral-patterns.html">行为模式</a>
+  <li><a href="behavioral-patterns.html">行爲模式</a>
     <ul>
-      <li><a href="bytecode.html">字节码</a></em></li>
-      <li><a href="subclass-sandbox.html">子类沙箱</a></li>
-      <li><a href="type-object.html">类型对象</a></li>
+      <li><a href="bytecode.html">字節碼</a></em></li>
+      <li><a href="subclass-sandbox.html">子類沙箱</a></li>
+      <li><a href="type-object.html">類型對象</a></li>
     </ul>
   </li>
   <li><a href="decoupling-patterns.html">解耦模式</a>
     <ul>
-      <li><a href="component.html">组件模式</a></li>
-      <li><a href="event-queue.html">事件队列</a></li>
-      <li><a href="service-locator.html">服务定位器</a></li>
+      <li><a href="component.html">組件模式</a></li>
+      <li><a href="event-queue.html">事件隊列</a></li>
+      <li><a href="service-locator.html">服務定位器</a></li>
     </ul>
   </li>
-  <li><a href="optimization-patterns.html">优化模式</a>
+  <li><a href="optimization-patterns.html">優化模式</a>
     <ul>
-      <li><a href="data-locality.html">数据局部性</a></li>
-      <li><a href="dirty-flag.html">脏标识模式</a></li>
-      <li><a href="object-pool.html">对象池模式</a></li>
-      <li><a href="spatial-partition.html">空间分区</a></li>
+      <li><a href="data-locality.html">數據局部性</a></li>
+      <li><a href="dirty-flag.html">髒標識模式</a></li>
+      <li><a href="object-pool.html">對象池模式</a></li>
+      <li><a href="spatial-partition.html">空間分區</a></li>
     </ul>
   </li>
 </ul>
 </aside>
 
-<h1>游戏编程模式</h1>
+<h1>遊戲編程模式</h1>
 <span name="index"></span>
 
 <div class="rhetorical">
-<h2>嘿，游戏开发者们！</h2>
+<h2>嘿，遊戲開發者們！</h2>
 <ul>
-  <li>为代码整体规划而苦苦挣扎？</li>
-  <li>发现随着代码库增长不容易做出改动？</li>
-  <li>感觉你的游戏就是一个大毛线球？任何东西都和其他所有东西绕在一起？</li>
-  <li>考虑有什么设计模式可以应用到游戏中？</li>
-  <li>听说过“缓存一致性”和“对象池”，但却不知道如何使用来加速你的游戏？</li>
+  <li>爲代碼整體規劃而苦苦掙扎？</li>
+  <li>發現隨着代碼庫增長不容易做出改動？</li>
+  <li>感覺你的遊戲就是一個大毛線球？任何東西都和其他所有東西繞在一起？</li>
+  <li>考慮有什麼設計模式可以應用到遊戲中？</li>
+  <li>聽說過“緩存一致性”和“對象池”，但卻不知道如何使用來加速你的遊戲？</li>
 </ul>
 </div>
 
-<p>我来帮忙！我写了这本书来回答这些问题。这是我在游戏中使用模式的总结，它们能让代码更整洁，更易懂，运行起来更快！</p>
+<p>我來幫忙！我寫了這本書來回答這些問題。這是我在遊戲中使用模式的總結，它們能讓代碼更整潔，更易懂，運行起來更快！</p>
 
-<h2>免费在线阅读！</h2>
+<h2>免費在線閱讀！</h2>
 
-<p>这是我在开始做游戏时想要的书！现在，我也想让你拥有一本！</p>
+<p>這是我在開始做遊戲時想要的書！現在，我也想讓你擁有一本！</p>
 
-<a class="start-reading" href="acknowledgements.html">开始阅读!</a>
+<a class="start-reading" href="acknowledgements.html">開始閱讀!</a>
 
 <div class="narrow-toc" style="display:none;">
 <h2>Table of Contents</h2>
@@ -148,18 +148,18 @@
 </table>
 </div>
 
-<h2>作者是谁？</h2>
+<h2>作者是誰？</h2>
 
 <img src="images/dogshot.jpg" class="profile" />
 
-<p>Bob Nystrom。他在EA工作时，就开始写这本书了。在那工作的8年里，他见过很多优美的代码，也见过很多可怕的代码。他希望能将从优美的代码中学到的东西写下来，并教大家怎样写出这样好的代码。
+<p>Bob Nystrom。他在EA工作時，就開始寫這本書了。在那工作的8年裏，他見過很多優美的代碼，也見過很多可怕的代碼。他希望能將從優美的代碼中學到的東西寫下來，並教大家怎樣寫出這樣好的代碼。
 </p>
 
-<p>如果你想与他交流，你可以在Twitter上(<a href="https://twitter.com/intent/user?screen_name=munificentbob"><code>@munificentbob</code></a>).
+<p>如果你想與他交流，你可以在Twitter上(<a href="https://twitter.com/intent/user?screen_name=munificentbob"><code>@munificentbob</code></a>).
 
-<h2>有反馈？</h2>
+<h2>有反饋？</h2>
 
-<p>如果对中文版有任何问题意见，不要犹豫，<a href="https://github.com/tkchu/Game-Programming-Patterns-CN/issues">提交issues</a>或者pull request.</p>
+<p>如果對繁體中文版有任何問題意見，不要猶豫，提交<a href="https://github.com/kahongchan/Game-Programming-Patterns-CN/issues">issues</a>或者 <a href="https://github.com/kahongchan/Game-Programming-Patterns-CN/pulls"> pull request.</a></p>
 
 </div>
 </div>
