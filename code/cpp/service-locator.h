@@ -12,10 +12,10 @@ void example()
   int VERY_LOUD_BANG = 0;
 
   //^15
-  // 使用静态类？
+  // 使用靜態類？
   AudioSystem::playSound(VERY_LOUD_BANG);
 
-  // 还是使用单例？
+  // 還是使用單例？
   AudioSystem::instance()->playSound(VERY_LOUD_BANG);
   //^15
 }
@@ -37,17 +37,17 @@ class ConsoleAudio : public Audio
 public:
   virtual void playSound(int soundID)
   {
-    // 使用主机音频API播放声音……
+    // 使用主機音頻API播放聲音……
   }
 
   virtual void stopSound(int soundID)
   {
-    // 使用主机音频API停止声音……
+    // 使用主機音頻API停止聲音……
   }
 
   virtual void stopAllSounds()
   {
-    // 使用主机音频API停止所有声音……
+    // 使用主機音頻API停止所有聲音……
   }
 };
 //^10
@@ -81,7 +81,7 @@ public:
 private:
   void log(const char* message)
   {
-    // 记录日志的代码……
+    // 記錄日誌的代碼……
   }
 
   Audio &wrapped_;
@@ -133,9 +133,9 @@ namespace Version2
   class DebugAudio: public Audio
   {
   public:
-    virtual void playSound(int soundID) { /* 什么也不做 */ }
-    virtual void stopSound(int soundID) { /* 什么也不做 */ }
-    virtual void stopAllSounds()        { /* 什么也不做 */ }
+    virtual void playSound(int soundID) { /* 什麼也不做 */ }
+    virtual void stopSound(int soundID) { /* 什麼也不做 */ }
+    virtual void stopAllSounds()        { /* 什麼也不做 */ }
   };
   class ReleaseAudio: public DebugAudio {};
 
@@ -161,10 +161,10 @@ namespace Version3
   //^3
   class Base
   {
-    // 定位和设置服务的代码……
+    // 定位和設置服務的代碼……
 
   protected:
-    // 派生类可以使用服务
+    // 派生類可以使用服務
     static Audio& getAudio() { return *service_; }
 
   private:
@@ -198,9 +198,9 @@ namespace Version5
   class NullAudio: public Audio
   {
   public:
-    virtual void playSound(int soundID) { /* 什么也不做 */ }
-    virtual void stopSound(int soundID) { /* 什么也不做 */ }
-    virtual void stopAllSounds()        { /* 什么也不做 */ }
+    virtual void playSound(int soundID) { /* 什麼也不做 */ }
+    virtual void stopSound(int soundID) { /* 什麼也不做 */ }
+    virtual void stopAllSounds()        { /* 什麼也不做 */ }
   };
   //^7
 
@@ -216,7 +216,7 @@ namespace Version5
     {
       if (service == NULL)
       {
-        // 退回空服务
+        // 退回空服務
         service_ = &nullService_;
       }
       else
@@ -237,10 +237,10 @@ namespace Version5
   //^13
   void enableAudioLogging()
   {
-    // 装饰现有的服务
+    // 裝飾現有的服務
     Audio *service = new LoggedAudio(Locator::getAudio());
 
-    // 将它换进来
+    // 將它換進來
     Locator::provide(service);
   }
   //^13

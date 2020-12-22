@@ -64,7 +64,7 @@ namespace Version1
                             double xVel, double yVel,
                             int lifetime)
   {
-    // 找到一个可用粒子
+    // 找到一個可用粒子
     for (int i = 0; i < POOL_SIZE; i++)
     {
       if (!particles_[i].inUse())
@@ -107,14 +107,14 @@ namespace Temp1
 
     union
     {
-      // 使用时的状态
+      // 使用時的狀態
       struct
       {
         double x, y;
         double xVel, yVel;
       } live;
 
-      // 可重用时的状态
+      // 可重用時的狀態
       Particle* next;
     } state_;
   };
@@ -155,16 +155,16 @@ namespace Temp1
   //^6
   ParticlePool::ParticlePool()
   {
-    // 第一个可用的粒子
+    // 第一個可用的粒子
     firstAvailable_ = &particles_[0];
 
-    // 每个粒子指向下一个
+    // 每個粒子指向下一個
     for (int i = 0; i < POOL_SIZE - 1; i++)
     {
       particles_[i].setNext(&particles_[i + 1]);
     }
 
-    // 最后一个终结的列表
+    // 最後一個終結的列表
     particles_[POOL_SIZE - 1].setNext(NULL);
   }
   //^6
@@ -174,10 +174,10 @@ namespace Temp1
                             double xVel, double yVel,
                             int lifetime)
   {
-    // 保证池没有满
+    // 保證池沒有滿
     assert(firstAvailable_ != NULL);
 
-    // 将它从可用粒子列表中移除
+    // 將它從可用粒子列表中移除
     Particle* newParticle = firstAvailable_;
     firstAvailable_ = newParticle->getNext();
 
@@ -192,7 +192,7 @@ namespace Temp1
     {
       if (particles_[i].animate())
       {
-        // 将粒子加到列表的前部
+        // 將粒子加到列表的前部
         particles_[i].setNext(firstAvailable_);
         firstAvailable_ = &particles_[i];
       }
@@ -245,7 +245,7 @@ namespace Temp4
   //^12
   class Particle
   {
-    // 多种初始化方式……
+    // 多種初始化方式……
     void init(double x, double y);
     void init(double x, double y, double angle);
     void init(double x, double y, double xVel, double yVel);
@@ -256,17 +256,17 @@ namespace Temp4
   public:
     void create(double x, double y)
     {
-      // 转发给粒子……
+      // 轉發給粒子……
     }
 
     void create(double x, double y, double angle)
     {
-      // 转发给粒子……
+      // 轉發給粒子……
     }
 
     void create(double x, double y, double xVel, double yVel)
     {
-      // 转发给粒子……
+      // 轉發給粒子……
     }
   };
   //^12
@@ -278,7 +278,7 @@ namespace Temp5
   class Particle
   {
   public:
-    // 多种初始化方法
+    // 多種初始化方法
     void init(double x, double y);
     void init(double x, double y, double angle);
     void init(double x, double y, double xVel, double yVel);

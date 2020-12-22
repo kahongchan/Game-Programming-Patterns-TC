@@ -20,17 +20,17 @@ namespace SimpleExample
 
     void move(double x, double y, double z)
     {
-      // 实现代码……
+      // 實現代碼……
     }
 
     void playSound(SoundId sound, double volume)
     {
-      // 实现代码……
+      // 實現代碼……
     }
 
     void spawnParticles(ParticleType type, int count)
     {
-      // 实现代码……
+      // 實現代碼……
     }
   };
   //^1
@@ -64,7 +64,7 @@ namespace Elaborated
     //^omit
     double getHeroX()
     {
-      // 实现代码……
+      // 實現代碼……
       //^omit
       return 0;
       //^omit
@@ -72,7 +72,7 @@ namespace Elaborated
 
     double getHeroY()
     {
-      // 实现代码……
+      // 實現代碼……
       //^omit
       return 0;
       //^omit
@@ -80,13 +80,13 @@ namespace Elaborated
 
     double getHeroZ()
     {
-      // 实现代码……
+      // 實現代碼……
       //^omit
       return 0;
       //^omit
     }
 
-    // 退出之类的……
+    // 退出之類的……
   };
   //^3
 
@@ -98,7 +98,7 @@ namespace Elaborated
     {
       if (getHeroZ() == 0)
       {
-        // 在地面上，冲向空中
+        // 在地面上，衝向空中
         playSound(SOUND_SPROING, 1.0f);
         spawnParticles(PARTICLE_DUST, 10);
         move(0, 0, 20);
@@ -111,7 +111,7 @@ namespace Elaborated
       }
       else
       {
-        // 正在空中，跳劈攻击
+        // 正在空中，跳劈攻擊
         playSound(SOUND_DIVE, 0.7f);
         spawnParticles(PARTICLE_SPARKLES, 1);
         move(0, 0, -getHeroZ());
@@ -146,17 +146,17 @@ namespace HelperClassBefore
   protected:
     void playSound(SoundId sound, double volume)
     {
-      // 实现代码……
+      // 實現代碼……
     }
 
     void stopSound(SoundId sound)
     {
-      // 实现代码……
+      // 實現代碼……
     }
 
     void setVolume(SoundId sound)
     {
-      // 实现代码……
+      // 實現代碼……
     }
 
     // 沙盒方法和其他操作……
@@ -171,17 +171,17 @@ namespace HelperClassAfter
   {
     void playSound(SoundId sound, double volume)
     {
-      // 实现代码……
+      // 實現代碼……
     }
 
     void stopSound(SoundId sound)
     {
-      // 实现代码……
+      // 實現代碼……
     }
 
     void setVolume(SoundId sound)
     {
-      // 实现代码……
+      // 實現代碼……
     }
   };
   //^7

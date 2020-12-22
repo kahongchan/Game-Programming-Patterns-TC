@@ -74,7 +74,7 @@ namespace State
         if (!isJumping_)
         {
           isJumping_ = true;
-          // 跳跃……
+          // 跳躍……
         }
       }
     }
@@ -97,7 +97,7 @@ namespace State
     {
       if (input == PRESS_B)
       {
-        // 如果没在跳跃，就跳起来……
+        // 如果沒在跳躍，就跳起來……
       }
       else if (input == PRESS_DOWN)
       {
@@ -133,7 +133,7 @@ namespace State
       {
         if (!isJumping_ && !isDucking_)
         {
-          // 跳跃……
+          // 跳躍……
         }
       }
       else if (input == PRESS_DOWN)
@@ -175,7 +175,7 @@ namespace State
       {
         if (!isJumping_ && !isDucking_)
         {
-          // 跳跃……
+          // 跳躍……
         }
       }
       else if (input == PRESS_DOWN)
@@ -230,10 +230,10 @@ namespace State
         Input input = PRESS_DOWN;
 
         //^start-ducking
-        // 在站立状态：
+        // 在站立狀態：
         if (input == PRESS_DOWN)
         {
-          // 改变状态……
+          // 改變狀態……
           chargeTime_ = 0;
           setGraphics(IMAGE_DUCK);
         }
@@ -334,10 +334,10 @@ namespace State
             chargeTime_ = 0;
             setGraphics(IMAGE_DUCK);
           }
-          // 处理其他输入……
+          // 處理其他輸入……
           break;
 
-          // 其他状态……
+          // 其他狀態……
           //^omit
         case STATE_JUMPING:
         case STATE_DUCKING:
@@ -413,7 +413,7 @@ namespace State
       virtual void handleInput(Heroine& heroine, Input input) {
         if (input == RELEASE_DOWN)
         {
-          // 改回站立状态……
+          // 改回站立狀態……
           heroine.setGraphics(IMAGE_STAND);
         }
       }
@@ -482,11 +482,11 @@ namespace State
     {
       if (input == PRESS_DOWN)
       {
-        // 其他代码……
+        // 其他代碼……
         return new DuckingState();
       }
 
-      // 保持这个状态
+      // 保持這個狀態
       return NULL;
     }
     //^duck
@@ -508,7 +508,7 @@ namespace State
       static JumpingState jumping;
       static DivingState diving;
 
-      // 其他代码……
+      // 其他代碼……
     };
     //^heroine-static-states
 
@@ -568,7 +568,7 @@ namespace State
         return new StandingState();
       }
 
-      // 其他代码……
+      // 其他代碼……
       //^omit
       return NULL;
       //^omit
@@ -609,7 +609,7 @@ namespace State
         heroine.setGraphics(IMAGE_STAND);
       }
 
-      // 其他代码……
+      // 其他代碼……
     };
     //^standing-with-enter
 
@@ -622,7 +622,7 @@ namespace State
         delete state_;
         state_ = state;
 
-        // 调用新状态的入口行为
+        // 調用新狀態的入口行爲
         state_->enter(*this);
       }
     }
@@ -643,7 +643,7 @@ namespace State
         return new StandingState();
       }
 
-      // 其他代码……
+      // 其他代碼……
       //^omit
       return NULL;
       //^omit
@@ -663,7 +663,7 @@ namespace State
     //^two-states
     class Heroine
     {
-      // 其他代码……
+      // 其他代碼……
       //^omit
       virtual void handleInput(Input input);
       //^omit
@@ -709,11 +709,11 @@ namespace State
       {
         if (input == PRESS_B)
         {
-          // 跳跃……
+          // 跳躍……
         }
         else if (input == PRESS_DOWN)
         {
-          // 俯卧……
+          // 俯臥……
         }
       }
     };
@@ -731,7 +731,7 @@ namespace State
         }
         else
         {
-          // 没有处理输入，返回上一层
+          // 沒有處理輸入，返回上一層
           OnGroundState::handleInput(heroine, input);
         }
       }

@@ -67,7 +67,7 @@ namespace Unbuffered
     //^3
     buffer_.draw(1, 1);
     buffer_.draw(4, 1);
-    // <- 图形驱动从这里读取像素！
+    // <- 圖形驅動從這裏讀取像素！
     buffer_.draw(1, 3);
     buffer_.draw(2, 4);
     buffer_.draw(3, 4);
@@ -103,7 +103,7 @@ namespace Buffered
   private:
     void swap()
     {
-      // 只需交换指针
+      // 只需交換指針
       Framebuffer* temp = current_;
       current_ = next_;
       next_ = temp;
@@ -268,10 +268,10 @@ namespace BufferedSlapstick
 
     void swap()
     {
-      // 交换缓冲区
+      // 交換緩衝區
       currentSlapped_ = nextSlapped_;
 
-      // 清空新的“下一个”缓冲区。.
+      // 清空新的“下一個”緩衝區。.
       nextSlapped_ = false;
     }
 

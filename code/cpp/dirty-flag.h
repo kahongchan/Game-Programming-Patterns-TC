@@ -58,7 +58,7 @@ namespace DirtyFlag
     {
       //^scene-graph
       GraphNode* graph_ = new GraphNode(NULL);
-      // 向根图节点增加子节点……
+      // 向根圖節點增加子節點……
       //^scene-graph
       use(graph_);
     }

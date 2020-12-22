@@ -161,7 +161,7 @@ namespace Flyweight
     private:
       Terrain* tiles_[WIDTH][HEIGHT];
 
-      // 其他代码……
+      // 其他代碼……
       //^omit
       Terrain grassTerrain_;
       Terrain hillTerrain_;
@@ -174,7 +174,7 @@ namespace Flyweight
     //^generate
     void World::generateTerrain()
     {
-      // 将地面填满草皮.
+      // 將地面填滿草皮.
       for (int x = 0; x < WIDTH; x++)
       {
         for (int y = 0; y < HEIGHT; y++)
@@ -255,7 +255,7 @@ namespace Flyweight
       Terrain hillTerrain_;
       Terrain riverTerrain_;
 
-      // 其他代码……
+      // 其他代碼……
     };
     //^world-terrain
   }

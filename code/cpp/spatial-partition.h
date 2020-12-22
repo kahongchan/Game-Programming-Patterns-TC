@@ -111,7 +111,7 @@ namespace SpatialPartition
     public:
       Grid()
       {
-        // 清空网格
+        // 清空網格
         for (int x = 0; x < NUM_CELLS; x++)
         {
           for (int y = 0; y < NUM_CELLS; y++)
@@ -134,7 +134,7 @@ namespace SpatialPartition
     //^unit-linked
     class Unit
     {
-      // 之前的代码……
+      // 之前的代碼……
     private:
       Unit* prev_;
       Unit* next_;
@@ -152,7 +152,7 @@ namespace SpatialPartition
     public:
       void add(Unit* unit);
 
-      // 之前的代码……
+      // 之前的代碼……
       //^omit
       static const int NUM_CELLS = 10;
       static const int CELL_SIZE = 20;
@@ -166,7 +166,7 @@ namespace SpatialPartition
     public:
       Unit(Grid* grid, double x, double y);
 
-      // 之前的代码……
+      // 之前的代碼……
       //^omit
       friend class Grid;
 
@@ -195,11 +195,11 @@ namespace SpatialPartition
     //^add
     void Grid::add(Unit* unit)
     {
-      // 检测它在哪个网格中
+      // 檢測它在哪個網格中
       int cellX = (int)(unit->x_ / Grid::CELL_SIZE);
       int cellY = (int)(unit->y_ / Grid::CELL_SIZE);
 
-      // 加到网格的对象列表前段
+      // 加到網格的對象列表前段
       unit->prev_ = NULL;
       unit->next_ = cells_[cellX][cellY];
       cells_[cellX][cellY] = unit;
@@ -226,7 +226,7 @@ namespace SpatialPartition
     public:
       Grid()
       {
-        // 清空网格
+        // 清空網格
         for (int x = 0; x < NUM_CELLS; x++)
         {
           for (int y = 0; y < NUM_CELLS; y++)
@@ -299,21 +299,21 @@ namespace SpatialPartition
     //^grid-move
     void Grid::move(Unit* unit, double x, double y)
     {
-      // 看看它现在在哪个网格中
+      // 看看它現在在哪個網格中
       int oldCellX = (int)(unit->x_ / Grid::CELL_SIZE);
       int oldCellY = (int)(unit->y_ / Grid::CELL_SIZE);
 
-      // 看看它移动向哪个网格
+      // 看看它移動向哪個網格
       int cellX = (int)(x / Grid::CELL_SIZE);
       int cellY = (int)(y / Grid::CELL_SIZE);
 
       unit->x_ = x;
       unit->y_ = y;
 
-      // 如果它没有改变网格，就到此为止
+      // 如果它沒有改變網格，就到此爲止
       if (oldCellX == cellX && oldCellY == cellY) return;
 
-      // 将它从老网格的列表中移除
+      // 將它從老網格的列表中移除
       if (unit->prev_ != NULL)
       {
         unit->prev_->next_ = unit->next_;
@@ -324,24 +324,24 @@ namespace SpatialPartition
         unit->next_->prev_ = unit->prev_;
       }
 
-      // 如果它是列表的头，移除它
+      // 如果它是列表的頭，移除它
       if (cells_[oldCellX][oldCellY] == unit)
       {
         cells_[oldCellX][oldCellY] = unit->next_;
       }
 
-      // 加到新网格的对象列表末尾
+      // 加到新網格的對象列表末尾
       add(unit);
     }
     //^grid-move
 
     void Grid::add(Unit* unit)
     {
-      // 检测它在哪个网格中
+      // 檢測它在哪個網格中
       int cellX = (int)(unit->x_ / Grid::CELL_SIZE);
       int cellY = (int)(unit->y_ / Grid::CELL_SIZE);
 
-      // 加到它所在网格的对象列表前部
+      // 加到它所在網格的對象列表前部
       unit->prev_ = NULL;
       unit->next_ = cells_[cellX][cellY];
       cells_[cellX][cellY] = unit;
@@ -530,11 +530,11 @@ namespace SpatialPartition
       Unit* unit = cells_[x][y];
       while (unit != NULL)
       {
-        // 处理同一网格中的其他单位
+        // 處理同一網格中的其他單位
         handleUnit(unit, unit->next_);
         //^omit handle-cell-unit
 
-        // 同样检测近邻网格
+        // 同樣檢測近鄰網格
         if (x > 0 && y > 0) handleUnit(unit, cells_[x - 1][y - 1]);
         if (x > 0) handleUnit(unit, cells_[x - 1][y]);
         if (y > 0) handleUnit(unit, cells_[x][y - 1]);

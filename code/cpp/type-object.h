@@ -15,7 +15,7 @@ namespace Subclasses
     {}
 
   private:
-    int health_; // 当前血值
+    int health_; // 當前血值
   };
   //^1
 
@@ -79,7 +79,7 @@ namespace NoInheritance
     }
 
   private:
-    int    health_; // 当前血值
+    int    health_; // 當前血值
     Breed& breed_;
   };
   //^4
@@ -162,7 +162,7 @@ namespace BreedCtorMonster
       breed_(breed)
     {}
 
-    int health_; // 当前血值
+    int health_; // 當前血值
     Breed& breed_;
   };
   //^6
@@ -193,19 +193,19 @@ namespace Inheritance
   //^10
   int Breed::getHealth()
   {
-    // 重载
+    // 重載
     if (health_ != 0 || parent_ == NULL) return health_;
 
-    // 继承
+    // 繼承
     return parent_->getHealth();
   }
 
   const char* Breed::getAttack()
   {
-    // 重载
+    // 重載
     if (attack_ != NULL || parent_ == NULL) return attack_;
 
-    // 继承
+    // 繼承
     return parent_->getAttack();
   }
   //^10
@@ -221,7 +221,7 @@ namespace CopyDown
     : health_(health),
       attack_(attack)
     {
-      // 继承没有重载的属性
+      // 繼承沒有重載的屬性
       if (parent != NULL)
       {
         if (health == 0) health_ = parent->getHealth();
@@ -251,7 +251,7 @@ namespace ExposeBreed
   public:
     Breed& getBreed() { return breed_; }
 
-    // 当前的代码……
+    // 當前的代碼……
     //^omit
     Breed& breed_;
     //^omit

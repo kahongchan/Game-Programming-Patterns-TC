@@ -41,28 +41,28 @@ namespace DataLocality
   class AIComponent
   {
   public:
-    void update() { /* 处理并修改状态…… */ }
+    void update() { /* 處理並修改狀態…… */ }
 
   private:
-    // 目标，情绪，等等……
+    // 目標，情緒，等等……
   };
 
   class PhysicsComponent
   {
   public:
-    void update() { /* 处理并修改状态…… */ }
+    void update() { /* 處理並修改狀態…… */ }
 
   private:
-    // 刚体，速度，质量，等等……
+    // 剛體，速度，質量，等等……
   };
 
   class RenderComponent
   {
   public:
-    void render() { /* 处理并修改状态…… */ }
+    void render() { /* 處理並修改狀態…… */ }
 
   private:
-    // 网格，纹理，着色器，等等……
+    // 網格，紋理，着色器，等等……
   };
   //^components
 
@@ -96,7 +96,7 @@ namespace DataLocality
     //^game-loop
     while (!gameOver)
     {
-      // 处理AI
+      // 處理AI
       for (int i = 0; i < numEntities; i++)
       {
         entities[i]->ai()->update();
@@ -108,13 +108,13 @@ namespace DataLocality
         entities[i]->physics()->update();
       }
 
-      // 绘制屏幕
+      // 繪製屏幕
       for (int i = 0; i < numEntities; i++)
       {
         entities[i]->render()->render();
       }
 
-      // 其他和时间有关的游戏循环机制……
+      // 其他和時間有關的遊戲循環機制……
     }
     //^game-loop
   }
@@ -138,7 +138,7 @@ namespace DataLocality
     //^game-loop-arrays
     while (!gameOver)
     {
-      // 处理AI
+      // 處理AI
       for (int i = 0; i < numEntities; i++)
       {
         aiComponents[i].update();
@@ -150,13 +150,13 @@ namespace DataLocality
         physicsComponents[i].update();
       }
 
-      // 绘制屏幕
+      // 繪製屏幕
       for (int i = 0; i < numEntities; i++)
       {
         renderComponents[i].render();
       }
 
-      // 其他和时间有关的游戏循环机制……
+      // 其他和時間有關的遊戲循環機制……
     }
     //^game-loop-arrays
 
@@ -236,15 +236,15 @@ namespace DataLocality
   //^activate-particle
   void ParticleSystem::activateParticle(int index)
   {
-    // 不应该已被激活！
+    // 不應該已被激活！
     assert(index >= numActive_);
 
-    // 将它和第一个未激活的粒子交换
+    // 將它和第一個未激活的粒子交換
     Particle temp = particles_[numActive_];
     particles_[numActive_] = particles_[index];
     particles_[index] = temp;
 
-    // 现在多了一个激活粒子
+    // 現在多了一個激活粒子
     numActive_++;
   }
   //^activate-particle
@@ -252,13 +252,13 @@ namespace DataLocality
   //^deactivate-particle
   void ParticleSystem::deactivateParticle(int index)
   {
-    // 不应该已被激活！
+    // 不應該已被激活！
     assert(index < numActive_);
 
-    // 现在少了一个激活粒子
+    // 現在少了一個激活粒子
     numActive_--;
 
-    // 将它和最后一个激活粒子交换
+    // 將它和最後一個激活粒子交換
     Particle temp = particles_[numActive_];
     particles_[numActive_] = particles_[index];
     particles_[index] = temp;

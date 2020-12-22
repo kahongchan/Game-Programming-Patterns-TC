@@ -78,14 +78,14 @@ namespace ObserverPattern
           }
           break;
 
-          // 处理其他事件，更新heroIsOnBridge_变量……
+          // 處理其他事件，更新heroIsOnBridge_變量……
         }
       }
 
     private:
       void unlock(Achievement achievement)
       {
-        // 如果还没有解锁，那就解锁成就……
+        // 如果還沒有解鎖，那就解鎖成就……
       }
 
       bool heroIsOnBridge_;
@@ -104,7 +104,7 @@ namespace ObserverPattern
     public:
       void addObserver(Observer* observer)
       {
-        // 添加到数组中……
+        // 添加到數組中……
         //^omit
         observers_[numObservers_++] = observer;
         //^omit
@@ -112,7 +112,7 @@ namespace ObserverPattern
 
       void removeObserver(Observer* observer)
       {
-        // 从数组中移除……
+        // 從數組中移除……
         //^omit
         int index;
         for (index = 0; index < MAX_OBSERVERS; index++)
@@ -122,7 +122,7 @@ namespace ObserverPattern
 
         if (index < numObservers_)
         {
-          // 将下一个向前移动
+          // 將下一個向前移動
           for (; index < numObservers_ - 1; index++)
           {
             observers_[index] = observers_[index + 1];
@@ -133,7 +133,7 @@ namespace ObserverPattern
         //^omit
       }
 
-      // 其他代码……
+      // 其他代碼……
       //^omit subject-notify
       //^omit subject-register
     protected:
@@ -145,7 +145,7 @@ namespace ObserverPattern
         }
       }
 
-      // 其他代码…………
+      // 其他代碼…………
       //^omit subject-notify
 
       //^omit subject-list
@@ -198,7 +198,7 @@ namespace ObserverPattern
       : next_(NULL)
       {}
 
-      // 其他代码……
+      // 其他代碼……
       //^omit
       virtual void onNotify(const Entity& entity, Event event) {}
       //^omit
@@ -299,10 +299,10 @@ namespace ObserverPattern
       virtual void onNotify(Observable& observable) = 0;
 
     private:
-      // 观察者正观察的对象
+      // 觀察者正觀察的對象
       Observable* observable_ = NULL;
 
-      // 被观察这的环形链表的下一个和上一个节点。
+      // 被觀察這的環形鏈表的下一個和上一個節點。
       Observer* prev_;
       Observer* next_;
     };
@@ -321,7 +321,7 @@ namespace ObserverPattern
 
       virtual ~Observable()
       {
-        // 分发给所有的观察者
+        // 分發給所有的觀察者
         while (observer_ != NULL) observer_->detach();
       }
 
@@ -338,23 +338,23 @@ namespace ObserverPattern
         while (observer != observer_);
       }
 
-      // 观察者链表中的第一个
+      // 觀察者鏈表中的第一個
       Observer* observer_;
     };
 
     void Observer::observe(Observable& observable)
     {
-      // 停止观察正在观察的事物
+      // 停止觀察正在觀察的事物
       detach();
 
       if (observable.observer_ == NULL)
       {
-        // 第一个观察者
+        // 第一個觀察者
         observable.observer_ = this;
       }
       else
       {
-        // 已然有了其他观察者，将它连接到链表的尾部。
+        // 已然有了其他觀察者，將它連接到鏈表的尾部。
         prev_ = observable.observer_->prev_;
         next_ = observable.observer_;
 
@@ -369,22 +369,22 @@ namespace ObserverPattern
     {
       if (observable_ == NULL) return;
 
-      // 保证被观察者的观察者指针没有指向这个节点。
+      // 保證被觀察者的觀察者指針沒有指向這個節點。
       if (observable_->observer_ == this)
       {
         if (next_ == this)
         {
-          // 这是唯一的观察者，清空它即可
+          // 這是唯一的觀察者，清空它即可
           observable_->observer_ = NULL;
         }
         else
         {
-          // 推进到下一个节点
+          // 推進到下一個節點
           observable_->observer_ = next_;
         }
       }
 
-      // 将这个观察者从列表中去除
+      // 將這個觀察者從列表中去除
       prev_->next_ = next_;
       next_->prev_ = prev_;
 
@@ -533,7 +533,7 @@ namespace ObserverPattern
       boop.sound();
       ASSERT(ear.numObserved == 1);
 
-      // 不应再听着beep
+      // 不應再聽着beep
       ear.observe(boop);
       beep.sound();
       ASSERT(ear.numObserved == 1);

@@ -26,33 +26,33 @@ PINK = '\033[91m'
 YELLOW = '\033[33m'
 
 CHAPTERS = [
-  "致谢",
-  "序",
-  "架构，性能和游戏",
-  "重访设计模式",
-  "命令模式",
-  "享元模式",
-  "观察者模式",
-  "原型模式",
-  "单例模式",
-  "状态模式",
-  "序列模式",
-  "双缓冲模式",
-  "游戏循环",
-  "更新方法",
-  "行为模式",
-  "字节码",
-  "子类沙箱",
-  "类型对象",
-  "解耦模式",
-  "组件模式",
-  "事件队列",
-  "服务定位器",
-  "优化模式",
-  "数据局部性",
-  "脏标识模式",
-  "对象池模式",
-  "空间分区"
+  "致謝 Acknowledgements",
+  "序 Introduction",
+  "架構，性能和遊戲 Architecture, Performance, and Games",
+  "重訪設計模式 Design Patterns Revisited",
+  "命令模式 Command",
+  "享元模式 Flyweight",
+  "觀察者模式 Observer",
+  "原型模式 Prototype",
+  "單例模式 Singleton",
+  "狀態模式 State",
+  "序列模式 Sequencing Patterns",
+  "雙緩衝模式 Double Buffer",
+  "遊戲循環 Game Loop",
+  "更新方法 Update Method",
+  "行爲模式 Behavioral Patterns",
+  "字節碼 Bytecode",
+  "子類沙箱 Subclass Sandbox",
+  "類型對象 Type Object",
+  "解耦模式 Decoupling Patterns",
+  "組件模式 Component",
+  "事件隊列 Event Queue",
+  "服務定位器 Service Locator",
+  "優化模式 Optimization Patterns",
+  "數據局部性 Data Locality",
+  "髒標識模式 Dirty Flag",
+  "對象池模式 Object Pool",
+  "空間分區 Spatial Partition"
 ]
 
 CHAPTERS_HTML = [
@@ -371,13 +371,21 @@ def make_prev_next(title):
   next_link = ""
   if chapter_index > 0:
     prev_href = title_to_file(CHAPTERS_HTML[chapter_index - 1])
-    prev_link = '<span class="prev">&larr; <a href="{}.html">上一章</a></span>'.format(
-      prev_href, CHAPTERS_HTML[chapter_index - 1])
+    ''' 
+    prev_link = '<span class="prev">&larr; <a href="{}{}.html">上一章</a></span>'.format(
+      prev_href, CHAPTERS_HTML[chapter_index - 1]) 
+    '''
+    prev_link = '&larr; <a href="{}.html">上<span class="full-nav">一章</span></a> &nbsp;'.format(
+      prev_href) #, CHAPTERS_HTML[chapter_index - 1])
 
   if chapter_index < len(CHAPTERS_HTML) - 1:
     next_href = title_to_file(CHAPTERS_HTML[chapter_index + 1])
-    next_link = '<span class="next"><a href="{}.html">下一章</a> &rarr;</span>'.format(
+    '''
+    next_link = '<span class="next"><a href="{}{}.html">下一章</a> &rarr;</span>'.format(
       next_href, CHAPTERS_HTML[chapter_index + 1])
+    '''
+    next_link = '<a href="{}.html">下<span class="full-nav">一章</span></a> &rarr; &nbsp;'.format(
+      next_href) # CHAPTERS_HTML[chapter_index + 1])
 
   return (prev_link, next_link)
 
@@ -464,7 +472,7 @@ def include_code(pattern, index, indentation):
 
 def buildnav(searchpath):
   nav = '<div class="nav">\n'
-  nav = nav + '<h1><a href="/">目录</a></h1>\n'
+  nav = nav + '<h1><a href="/">目錄</a></h1>\n'
 
   # Read the chapter outline from the index page.
   with open('html/index.html', 'r', encoding="utf8") as source:
@@ -522,7 +530,7 @@ else:
     file_filter = sys.argv[1]
 
   format_files(file_filter, False)
-"""对中文统计失效。
+"""對中文統計失效。
   average_word_count = total_words / (num_chapters - empty_chapters)
   estimated_word_count = total_words + (empty_chapters * average_word_count)
   percent_finished = total_words * 100 / estimated_word_count

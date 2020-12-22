@@ -83,7 +83,7 @@ namespace Singleton2
   public:
     virtual char* readFile(char* path)
     {
-      // 使用索尼的文件读写API……
+      // 使用索尼的文件讀寫API……
       //^omit
       return NULL;
       //^omit
@@ -91,7 +91,7 @@ namespace Singleton2
 
     virtual void writeFile(char* path, char* contents)
     {
-      // 使用索尼的文件读写API……
+      // 使用索尼的文件讀寫API……
     }
   };
 
@@ -100,7 +100,7 @@ namespace Singleton2
   public:
     virtual char* readFile(char* path)
     {
-      // 使用任天堂的文件读写API……
+      // 使用任天堂的文件讀寫API……
       //^omit
       return NULL;
       //^omit
@@ -108,7 +108,7 @@ namespace Singleton2
 
     virtual void writeFile(char* path, char* contents)
     {
-      // 使用任天堂的文件读写API……
+      // 使用任天堂的文件讀寫API……
     }
   };
   //^derived-file-systems
@@ -326,7 +326,7 @@ namespace Singleton10
   public:
     static Game& instance() { return instance_; }
 
-    // 设置log_, et. al. ……
+    // 設置log_, et. al. ……
 
     Log&         getLog()         { return *log_; }
     FileSystem&  getFileSystem()  { return *fileSystem_; }

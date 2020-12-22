@@ -28,13 +28,13 @@ namespace UpdateMethod
       //^just-patrol
       while (true)
       {
-        // 向右巡逻
+        // 向右巡邏
         for (double x = 0; x < 100; x++)
         {
           skeleton.setX(x);
         }
 
-        // 向左巡逻
+        // 向左巡邏
         for (double x = 100; x > 0; x--)
         {
           skeleton.setX(x);
@@ -50,7 +50,7 @@ namespace UpdateMethod
       bool patrollingLeft = false;
       double x = 0;
 
-      // 游戏主循环
+      // 遊戲主循環
       while (true)
       {
         if (patrollingLeft)
@@ -66,7 +66,7 @@ namespace UpdateMethod
 
         skeleton.setX(x);
 
-        // 处理用户输入并渲染游戏……
+        // 處理用戶輸入並渲染遊戲……
       }
       //^patrol-in-loop
     }
@@ -74,16 +74,16 @@ namespace UpdateMethod
     void statues()
     {
       //^statues
-      // 骷髅的变量……
+      // 骷髏的變量……
       Entity leftStatue;
       Entity rightStatue;
       int leftStatueFrames = 0;
       int rightStatueFrames = 0;
 
-      // 游戏主循环：
+      // 遊戲主循環：
       while (true)
       {
-        // 骷髅的代码……
+        // 骷髏的代碼……
 
         if (++leftStatueFrames == 90)
         {
@@ -97,7 +97,7 @@ namespace UpdateMethod
           rightStatue.shootLightning();
         }
 
-        // 处理用户输入，渲染游戏
+        // 處理用戶輸入，渲染遊戲
       }
       //^statues
     }
@@ -191,9 +191,9 @@ namespace UpdateMethod
     {
       while (true)
       {
-        // 处理用户输入……
+        // 處理用戶輸入……
 
-        // 更新每个实体
+        // 更新每個實體
         //^update-component-entities
         for (int i = 0; i < numEntities_; i++)
         {
@@ -248,7 +248,7 @@ namespace UpdateMethod
         {
           shootLightning();
 
-          // 重置计时器
+          // 重置計時器
           frames_ = 0;
         }
       }
@@ -279,7 +279,7 @@ namespace UpdateMethod
     //^forward
     void Entity::update()
     {
-      // 转发给状态对象
+      // 轉發給狀態對象
       state_->update();
     }
     //^forward

@@ -5,7 +5,7 @@
 <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
 
-<title>{{title}} &middot; 游戏设计模式</title>
+<title>{{title}} &middot; 遊戲設計模式</title>
 
 <!-- Tell mobile browsers we're optimized for them and they don't need to crop
      the viewport. -->
@@ -16,6 +16,10 @@ delete the font style for english.
 <link href="http://fonts.gmirror.org/css?family=Merriweather:400,400italic,700,700italic|Source+Code+Pro|Source+Sans+Pro:200,300,400,600,400italic,600italic|Rock+Salt" rel="stylesheet" type="text/css">
 -->
 <!-- delete the google analyse code to improve the speed, sorry. -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Noto+Serif+TC:wght@300&display=swap" rel="stylesheet">
+
 <script src="http://apps.bdimg.com/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="script.js"></script>
 
@@ -24,51 +28,51 @@ delete the font style for english.
 
 <span class="toc">
 	<aside style="position:fixed; top:10px; left:10px;" class="index noShowOnSmallScren" name="index">
-		<h2>目录</h2>
+		<h2>目錄</h2>
 		<ul>
-		  <li><a href="acknowledgements.html">致谢</a>
+		  <li><a href="acknowledgements.html">致謝</a>
 		  <li><a href="introduction.html">序</a>
 		    <ul>
-		      <li><a href="architecture-performance-and-games.html">架构，性能和游戏</a></li>
+		      <li><a href="architecture-performance-and-games.html">架構，性能和遊戲</a></li>
 		    </ul>
 		  </li>
-		  <li><a href="design-patterns-revisited.html">重访设计模式</a>
+		  <li><a href="design-patterns-revisited.html">重訪設計模式</a>
 		    <ul>
 		      <li><a href="command.html">命令模式</a></li>
 		      <li><a href="flyweight.html">享元模式</a></li>
-		      <li><a href="observer.html">观察者模式</a></li>
+		      <li><a href="observer.html">觀察者模式</a></li>
 		      <li><a href="prototype.html">原型模式</a></li>
-		      <li><a href="singleton.html">单例模式</a></li>
-		      <li><a href="state.html">状态模式</a></li>
+		      <li><a href="singleton.html">單例模式</a></li>
+		      <li><a href="state.html">狀態模式</a></li>
 		    </ul>
 		  </li>
 		  <li><a href="sequencing-patterns.html">序列模式</a>
 		    <ul>
-		      <li><a href="double-buffer.html">双缓冲模式</a></li>
-		      <li><a href="game-loop.html">游戏循环</a></li>
+		      <li><a href="double-buffer.html">雙緩衝模式</a></li>
+		      <li><a href="game-loop.html">遊戲循環</a></li>
 		      <li><a href="update-method.html">更新方法</a></li>
 		    </ul>
 		  </li>
-		  <li><a href="behavioral-patterns.html">行为模式</a>
+		  <li><a href="behavioral-patterns.html">行爲模式</a>
 		    <ul>
-		      <li><a href="bytecode.html">字节码</a></em></li>
-		      <li><a href="subclass-sandbox.html">子类沙箱</a></li>
-		      <li><a href="type-object.html">类型对象</a></li>
+		      <li><a href="bytecode.html">字節碼</a></em></li>
+		      <li><a href="subclass-sandbox.html">子類沙箱</a></li>
+		      <li><a href="type-object.html">類型對象</a></li>
 		    </ul>
 		  </li>
 		  <li><a href="decoupling-patterns.html">解耦模式</a>
 		    <ul>
-		      <li><a href="component.html">组件模式</a></li>
-		      <li><a href="event-queue.html">事件队列</a></li>
-		      <li><a href="service-locator.html">服务定位器</a></li>
+		      <li><a href="component.html">組件模式</a></li>
+		      <li><a href="event-queue.html">事件隊列</a></li>
+		      <li><a href="service-locator.html">服務定位器</a></li>
 		    </ul>
 		  </li>
-		  <li><a href="optimization-patterns.html">优化模式</a>
+		  <li><a href="optimization-patterns.html">優化模式</a>
 		    <ul>
-		      <li><a href="data-locality.html">数据局部性</a></li>
-		      <li><a href="dirty-flag.html">脏标识模式</a></li>
-		      <li><a href="object-pool.html">对象池模式</a></li>
-		      <li><a href="spatial-partition.html">空间分区</a></li>
+		      <li><a href="data-locality.html">數據局部性</a></li>
+		      <li><a href="dirty-flag.html">髒標識模式</a></li>
+		      <li><a href="object-pool.html">對象池模式</a></li>
+		      <li><a href="spatial-partition.html">空間分區</a></li>
 		    </ul>
 		  </li>
 		</ul>
@@ -79,17 +83,43 @@ delete the font style for english.
 <div class="page sidebar">
 <div class="content">
 <nav class="top">
-  {{prev}}
-  {{next}}
-  <span class="toc">&equiv; <a href="/">首页</a></span>
+  <table>
+    <tbody>
+      <tr>
+        <td>{{prev}}</td>
+        <td class="gap">&nbsp;</td>
+        <td>§&nbsp;<a href="contents.html">Contents</a></td>
+        <td class="gap">&nbsp;</td>
+        <!--<td><span class="toc">&equiv; <a href="/">首頁</a></span></td>-->
+        <td>&equiv; <a href="/">首頁</a></td>
+        <td class="gap">&nbsp;</td>
+        <td>{{next}}</td>
+      </tr>
+    </tbody>
+  </table>
 </nav>
 <h1>{{header}}</h1>
-<h1 class="book"><a href="/">游戏设计模式</a>{{section_header}}</h1>
+<h1 class="book"><a href="/">遊戲設計模式</a>{{section_header}}</h1>
 {{body}}
 <nav>
-  {{prev}}
+  <table>
+    <tbody>
+      <tr>
+        <td>{{prev}}</td>
+        <td class="gap">&nbsp;</td>
+        <td>§&nbsp;<a href="contents.html">Contents</a></td>
+        <td class="gap">&nbsp;</td>
+        <!--<td><span class="toc">&equiv; <a href="/">首頁</a></span></td>-->
+        <td>&equiv; <a href="/">首頁</a></td>
+        <td class="gap">&nbsp;</td>
+        <td>{{next}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- {{prev}}
   {{next}}
-  <span class="toc">&equiv; <a href="/">首页</a></span>
+  <span class="toc">&equiv; <a href="/">首頁</a></span> -->
 </nav>
 </div>
 </div>

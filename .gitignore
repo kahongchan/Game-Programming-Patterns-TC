@@ -11,6 +11,7 @@ xml/
 html/*.html
 
 !html/index.html
+!html/contents.html
 
 .vscode/
 .vscode/*

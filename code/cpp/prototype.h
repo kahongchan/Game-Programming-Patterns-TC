@@ -8,7 +8,7 @@ namespace PrototypePattern
     //^monster-classes
     class Monster
     {
-      // 代码……
+      // 代碼……
     };
 
     class Ghost : public Monster {};
@@ -55,7 +55,7 @@ namespace PrototypePattern
       virtual ~Monster() {}
       virtual Monster* clone() = 0;
 
-      // 其他代码……
+      // 其他代碼……
     };
     //^virtual-clone
 
@@ -111,7 +111,7 @@ namespace PrototypePattern
   {
     class Monster
     {
-      // 代码……
+      // 代碼……
     };
 
     class Ghost : public Monster {};
@@ -156,7 +156,7 @@ namespace PrototypePattern
   {
     class Monster
     {
-      // 代码……
+      // 代碼……
     };
 
     class Ghost : public Monster {};

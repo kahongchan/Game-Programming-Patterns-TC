@@ -45,11 +45,11 @@ namespace Bytecode
 
       virtual double evaluate()
       {
-        // 计算操作数
+        // 計算操作數
         double left = left_->evaluate();
         double right = right_->evaluate();
 
-        // 把它们加起来
+        // 把它們加起來
         return left + right;
       }
 
@@ -160,7 +160,7 @@ namespace Bytecode
         char instruction = bytecode[i];
         switch (instruction)
         {
-          // 每条指令的跳转分支……
+          // 每條指令的跳轉分支……
             //^omit
           case INST_SPAWN_PARTICLES:
             break;
@@ -184,7 +184,7 @@ namespace Bytecode
       : stackSize_(0)
       {}
 
-      // 其他代码……
+      // 其他代碼……
 
     private:
       static const int MAX_STACK = 128;
@@ -202,19 +202,19 @@ namespace Bytecode
     private:
       void push(int value)
       {
-        // 检查栈溢出
+        // 檢查棧溢出
         assert(stackSize_ < MAX_STACK);
         stack_[stackSize_++] = value;
       }
 
       int pop()
       {
-        // 保证栈不是空的
+        // 保證棧不是空的
         assert(stackSize_ > 0);
         return stack_[--stackSize_];
       }
 
-      // 其余的代码
+      // 其餘的代碼
       //^omit
       void interpret();
       static const int MAX_STACK = 128;
@@ -240,7 +240,7 @@ namespace Bytecode
 
         case INST_SET_WISDOM:
         case INST_SET_AGILITY:
-          // 像上面一样……
+          // 像上面一樣……
 
         case INST_PLAY_SOUND:
           playSound(pop());
@@ -259,7 +259,7 @@ namespace Bytecode
         //^interpret-literal
         case INST_LITERAL:
         {
-          // 从字节码中读取下一个字节
+          // 從字節碼中讀取下一個字節
           int value = bytecode[++i];
           push(value);
           break;
@@ -333,12 +333,12 @@ namespace Bytecode
       virtual ValueType type() = 0;
 
       virtual int asInt() {
-        // 只能在int上调用
+        // 只能在int上調用
         assert(false);
         return 0;
       }
 
-      // 其他转换方法……
+      // 其他轉換方法……
     };
     //^value-interface
 

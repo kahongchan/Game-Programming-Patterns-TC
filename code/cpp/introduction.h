@@ -12,7 +12,7 @@
 //^update
 bool update()
 {
-  // 做点工作……
+  // 做點工作……
   return isDone();
 }
 //^update

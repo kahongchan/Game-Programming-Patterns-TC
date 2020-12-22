@@ -14,7 +14,7 @@ class Controller
 public:
   static Joystick getJoystickDirection()
   {
-    // 检测现在玩家在按下手柄的哪个方向键……
+    // 檢測現在玩家在按下手柄的哪個方向鍵……
     return DIR_NONE;
   }
 };
@@ -28,7 +28,7 @@ class Graphics
 public:
   void draw(Sprite& sprite, int x, int y)
   {
-    // 在给定位置绘制图形……
+    // 在給定位置繪製圖形……
   }
 };
 
@@ -41,7 +41,7 @@ class World
 public:
   void resolveCollision(Volume& volume, int& x, int& y, int& velocity)
   {
-    // 检测英雄碰到了什么，如果需要的话，更改位置和速度……
+    // 檢測英雄碰到了什麼，如果需要的話，更改位置和速度……
   }
 };
 
@@ -94,7 +94,7 @@ namespace Monolithic
   //^monolithic-update
   void Bjorn::update(World& world, Graphics& graphics)
   {
-    // 根据用户输入修改英雄的速度
+    // 根據用戶輸入修改英雄的速度
     switch (Controller::getJoystickDirection())
     {
       case DIR_LEFT:
@@ -109,11 +109,11 @@ namespace Monolithic
       //^omit
     }
 
-    // 根据速度修改位置
+    // 根據速度修改位置
     x_ += velocity_;
     world.resolveCollision(volume_, x_, y_, velocity_);
 
-    // 绘制合适的图形
+    // 繪製合適的圖形
     Sprite* sprite = &spriteStand_;
     if (velocity_ < 0)
     {
@@ -188,11 +188,11 @@ namespace SplitAIComponent
       input_.update(*this);
       //^4
 
-      // 根据速度修改位置
+      // 根據速度修改位置
       x += velocity;
       world.resolveCollision(volume_, x, y, velocity);
 
-      // 绘制合适的图形
+      // 繪製合適的圖形
       Sprite* sprite = &spriteStand_;
       if (velocity < 0)
       {
@@ -426,7 +426,7 @@ namespace AbstractInputBjorn
   public:
     virtual void update(Bjorn& bjorn)
     {
-      // 自动控制Bjorn的AI……
+      // 自動控制Bjorn的AI……
     }
   };
   //^12
@@ -519,7 +519,7 @@ namespace BaseGameObject
   public:
     virtual void update(GameObject& obj, World& world)
     {
-      // 物理代码……
+      // 物理代碼……
     }
   };
 
@@ -528,7 +528,7 @@ namespace BaseGameObject
   public:
     virtual void update(GameObject& obj, Graphics& graphics)
     {
-      // 图形代码……
+      // 圖形代碼……
     }
   };
   //^16
@@ -575,7 +575,7 @@ namespace DirectComponentRef
       }
       else
       {
-        // 现存的图形代码……
+        // 現存的圖形代碼……
         //^omit
         sprite = NULL;
         //^omit

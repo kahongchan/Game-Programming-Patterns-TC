@@ -81,7 +81,7 @@ namespace CommandPattern
     public:
       void handleInput();
 
-      // 绑定命令的方法……
+      // 綁定命令的方法……
 
     private:
       Command* buttonX_;
@@ -149,7 +149,7 @@ namespace CommandPattern
       if (isPressed(BUTTON_A)) return buttonA_;
       if (isPressed(BUTTON_B)) return buttonB_;
 
-      // 没有按下任何按键，就什么也不做
+      // 沒有按下任何按鍵，就什麼也不做
       return NULL;
     }
     //^handle-input-return
@@ -217,18 +217,18 @@ namespace CommandPattern
         Unit* unit = getSelectedUnit();
 
         if (isPressed(BUTTON_UP)) {
-          // 向上移动单位
+          // 向上移動單位
           int destY = unit->y() - 1;
           return new MoveUnitCommand(unit, unit->x(), destY);
         }
 
         if (isPressed(BUTTON_DOWN)) {
-          // 向下移动单位
+          // 向下移動單位
           int destY = unit->y() + 1;
           return new MoveUnitCommand(unit, unit->x(), destY);
         }
 
-        // 其他的移动……
+        // 其他的移動……
 
         return NULL;
       }
@@ -261,8 +261,8 @@ namespace CommandPattern
 
         virtual void execute()
         {
-          // 保存移动之前的位置
-          // 这样之后可以复原。
+          // 保存移動之前的位置
+          // 這樣之後可以復原。
 
           xBefore_ = unit_->x();
           yBefore_ = unit_->y();
