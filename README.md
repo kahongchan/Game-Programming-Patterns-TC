@@ -1,5 +1,10 @@
-# [遊戲編程模式繁體中文版](http://tkchu.github.io/Game-Programming-Patterns-CN/)
+# [遊戲編程模式繁體中文版](http://gpps.billy-chan.com/)
 ###### 點擊上面標題在線閱讀
+
+## 關於此書
+此書的翻譯文本原作者是 [Milo Yip](https://github.com/miloyip), 並由 [tkchu](https://github.com/tkchu) 分享, 本人只是以一位左手交右手的角色將此書轉換成繁體中文, 目的只是想將此好書分享給繁體社群. 並增加少許功能如加入 TOC (原文版有此功能) 和作少許修正. 在此十分感謝原作者 Bob Nystrom 和翻譯的 Milo Yip 及 tkchu 無私貢獻. 
+
+由於文本和執行腳本均有作出修改, 所以已將 python 2.7 的腳本移除. 請使用 Python 3 或以上執行腳本. 
 
 《遊戲編程模式》是由曾在EA工作八年的Bob Nystrom寫就，講述在遊戲開發中各種常見的編程模式。
 通過閱讀此書，可以更好的理解設計模式和工程化開發。
@@ -9,19 +14,6 @@
 Bob Nystrom同時在Github上無私地提供原本：[munificent/game-programming-patterns](https://github.com/munificent/game-programming-patterns)。
 
 如果有任何表意不明或者疏忽遺漏，歡迎提出Issues，謝謝您的貢獻，讓我們的世界變得更好。
-
-## 進度
-
-1. 第一輪作業（完成）：將整書翻譯一遍，翻譯質量預期略高於谷歌機翻。
-2. 第二輪作業（完成）：修復漏洞，翻譯所有的旁註並添加鏈接，同時平滑語言。
-3. 第三輪作業（完成）：校訂，修改圖片爲中文，將alt也改爲中文。
-4. 第四輪作業（完成）：修改代碼註釋爲中文。
-5. 第五輪作業：優化訪問速度和顯示效果。
-    - 通過使用百度CDN提供jquery（完成）。
-    - 刪除google analysis代碼（完成）。
-    - 刪除英文特殊字體（完成）。
-    - 壓縮圖片（完成）。
-    - 使用更適合中文的CSS設置（完成）。
 
 ## 編譯本書
 
@@ -34,11 +26,7 @@ Bob Nystrom同時在Github上無私地提供原本：[munificent/game-programmin
 
 在此之後，使用：
 
-	$ python script/format.py # Python 3
-
-或者
-
-	$ python script/format_python2.py # Python 2.7+
+	$ python script/format.py 
 
 請從本項目的根目錄運行該腳本，本腳本也可以以監視模式運行：
 

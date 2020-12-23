@@ -371,19 +371,11 @@ def make_prev_next(title):
   next_link = ""
   if chapter_index > 0:
     prev_href = title_to_file(CHAPTERS_HTML[chapter_index - 1])
-    ''' 
-    prev_link = '<span class="prev">&larr; <a href="{}{}.html">上一章</a></span>'.format(
-      prev_href, CHAPTERS_HTML[chapter_index - 1]) 
-    '''
     prev_link = '&larr; <a href="{}.html">上<span class="full-nav">一章</span></a> &nbsp;'.format(
       prev_href) #, CHAPTERS_HTML[chapter_index - 1])
 
   if chapter_index < len(CHAPTERS_HTML) - 1:
     next_href = title_to_file(CHAPTERS_HTML[chapter_index + 1])
-    '''
-    next_link = '<span class="next"><a href="{}{}.html">下一章</a> &rarr;</span>'.format(
-      next_href, CHAPTERS_HTML[chapter_index + 1])
-    '''
     next_link = '<a href="{}.html">下<span class="full-nav">一章</span></a> &rarr; &nbsp;'.format(
       next_href) # CHAPTERS_HTML[chapter_index + 1])
 
