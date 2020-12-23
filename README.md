@@ -1,6 +1,12 @@
 # [遊戲編程模式繁體中文版](http://gpps.billy-chan.com/)
 ###### 點擊上面標題在線閱讀
 
+繁體中文版在線閱讀連結: 
+[http://gpps.billy-chan.com/](http://gpps.billy-chan.com/)
+
+簡體中文版在線閱讀連結:
+[https://gpp.tkchu.me/](https://gpp.tkchu.me/)
+
 ## 關於此書
 此書的翻譯文本原作者是 [Milo Yip](https://github.com/miloyip), 並由 [tkchu](https://github.com/tkchu) 分享, 本人只是以一位左手交右手的角色將此書轉換成繁體中文, 目的只是想將此好書分享給繁體社群. 並增加少許功能如加入 TOC (原文版有此功能) 和作少許修正. 在此十分感謝原作者 Bob Nystrom 和翻譯的 Milo Yip 及 tkchu 無私貢獻. 
 
