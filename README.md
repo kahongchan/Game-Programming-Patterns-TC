@@ -12,7 +12,7 @@
 
 由於文本和執行腳本均有作出修改, 所以已將 python 2.7 的腳本移除. 請使用 Python 3 或以上執行腳本. 
 
-《遊戲編程模式》是由曾在EA工作八年的Bob Nystrom寫就，講述在遊戲開發中各種常見的編程模式。
+《遊戲編程模式》是由曾在EA工作八年的Bob Nystrom寫成，講述在遊戲開發中各種常見的編程模式。
 通過閱讀此書，可以更好的理解設計模式和工程化開發。
 
 英文版在線閱讀：[Game Programming Patterns](http://gameprogrammingpatterns.com/)
